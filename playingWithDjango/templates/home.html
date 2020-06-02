@@ -5,6 +5,10 @@
     <p>
         {{my_text}}<br>
         {{this_num}}<br>
-        {{my_list}}
+        <ul>
+            {% for item in my_list %}
+                <li>{{item}}</li>
+            {% endfor %}
+        </ul>
     </p>
 {% endblock %}
