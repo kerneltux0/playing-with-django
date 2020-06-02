@@ -5,7 +5,12 @@ from django.http import HttpResponse
 def home_view(request, *args, **kwargs):
     my_context = {
         'my_text': 'Take a guess',
-        'this_num': 3.14
+        'this_num': 3.14,
+        'my_list': [
+            'whatever',
+            123,
+            123.456
+        ]
     }
     return render(request, "home.html", my_context)
     
