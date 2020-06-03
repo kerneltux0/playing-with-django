@@ -14,4 +14,4 @@ def testing_detail_view(request):
     #     'coolStuff': obj.coolStuff
     # }
 
-    return render(request, "testing_detail.html", context)
+    return render(request, "testing/detail.html", context)
