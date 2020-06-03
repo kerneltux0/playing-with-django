@@ -9,5 +9,5 @@ def testing_detail_view(request):
         'info': obj.info,
         'coolStuff': obj.coolStuff
     }
-    
-    return render(request, "testing/detail.html", {})
+
+    return render(request, "testing/detail.html", context)
