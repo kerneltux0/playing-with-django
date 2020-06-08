@@ -8,6 +8,7 @@ def testing_create_view(request):
     form = TestForm(request.POST or None)
     if form.is_valid():
         form.save()
+        form = TestForm()
 
     context = {
         'form': form
