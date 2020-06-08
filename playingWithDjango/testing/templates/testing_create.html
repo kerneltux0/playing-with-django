@@ -1,4 +1,8 @@
 {% extends 'base.html' %}
 
 {% block form_content %}
+<form>
+    {{ form.as_p }}
+    <input type='submit' value='Save' />
+</form>
 {% endblock %}
