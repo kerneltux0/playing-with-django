@@ -10,11 +10,11 @@ def testing_create_view(request):
         form.save()
 
     context = {
-        'form': obj
+        'form': form
     }
 
 
-    return render(request, "testing_detail.html", context)
+    return render(request, "testing_create.html", context)
 
 def testing_detail_view(request):
     obj = Testing.objects.get(id=1)
