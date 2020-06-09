@@ -19,6 +19,9 @@ def testing_create_view(request):
 
 def testing_delete_view(request, id):
     obj = get_object_or_404(Testing, id=id)
+    if request.method == 'POST':
+        obj.delete()
+        
     context = {
         'object': obj
     }
