@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block testing_list %}
+    {% for instance in object_list %}
+        <p>{{instance.title}}</p><br>
+        <p>{{instance.info}}</p>
+    {% endfor %}
+{% endblock %}
