@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Testing
 from .forms import TestForm
 
@@ -21,7 +21,8 @@ def testing_delete_view(request, id):
     obj = get_object_or_404(Testing, id=id)
     if request.method == 'POST':
         obj.delete()
-        
+        return redirect('../')
+
     context = {
         'object': obj
     }
