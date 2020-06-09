@@ -9,3 +9,10 @@ class TestForm(forms.ModelForm):
             'info',
             'coolStuff'
         ]
+    
+    def clean_title(self, *args, **kwargs):
+        title = self.cleaned_data.get('title')
+        if "something" in title:
+            return title
+        else:
+            raise forms.ValidationError("Wrong question!")
