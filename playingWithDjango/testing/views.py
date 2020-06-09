@@ -17,11 +17,20 @@ def testing_create_view(request):
 
     return render(request, "testing_create.html", context)
 
+def testing_list_view(request):
+    querySet = Testing.objects.all()
+
+    context = {
+        'object_list': querySet
+    }
+
+    return render(request, 'testing_list.html', context)
+
 def testing_delete_view(request, id):
     obj = get_object_or_404(Testing, id=id)
     if request.method == 'POST':
         obj.delete()
-        return redirect('../')
+        return redirect('../../')
 
     context = {
         'object': obj
