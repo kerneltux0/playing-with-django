@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
     path('contact/', contact_view),
-    path('testing/<int:id>/', dynamic_lookup_view),
+    path('testing/<int:id>/', dynamic_lookup_view, name="testing-detail"),
     path('create/', testing_create_view),
     path('testing/<int:id>/delete/', testing_delete_view),
     path('testing/', testing_list_view)
