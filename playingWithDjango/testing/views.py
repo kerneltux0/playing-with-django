@@ -17,6 +17,14 @@ def testing_create_view(request):
 
     return render(request, "testing_create.html", context)
 
+def testing_delete_view(request, id):
+    obj = get_object_or_404(Testing, id=id)
+    context = {
+        'object': obj
+    }
+
+    return render(request, 'testing_delete.html', context)
+
 def dynamic_lookup_view(request, id):
     obj = get_object_or_404(Testing, id=id)
     context = {
