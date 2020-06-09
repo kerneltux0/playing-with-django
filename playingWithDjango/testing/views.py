@@ -17,16 +17,19 @@ def testing_create_view(request):
 
     return render(request, "testing_create.html", context)
 
+def dynamic_lookup_view(request, id):
+    obj = Testing.objects.get(id=id)
+    context = {
+        'object': obj
+    }
+
+    return render(request, 'testing_detail.html', context)
+
 def testing_detail_view(request):
     obj = Testing.objects.get(id=1)
 
     context = {
         'object': obj
     }
-    # context = {
-    #     'title': obj.title,
-    #     'info': obj.info,
-    #     'coolStuff': obj.coolStuff
-    # }
 
     return render(request, "testing_detail.html", context)
