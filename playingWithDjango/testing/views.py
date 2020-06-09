@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Testing
 from .forms import TestForm
 
@@ -18,7 +18,7 @@ def testing_create_view(request):
     return render(request, "testing_create.html", context)
 
 def dynamic_lookup_view(request, id):
-    obj = Testing.objects.get(id=id)
+    obj = get_object_or_404(Testing, id=id)
     context = {
         'object': obj
     }
