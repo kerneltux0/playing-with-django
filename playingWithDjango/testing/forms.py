@@ -12,7 +12,6 @@ class TestForm(forms.ModelForm):
     
     def clean_title(self, *args, **kwargs):
         title = self.cleaned_data.get('title')
-        if "something" in title:
-            return title
-        else:
+        if not "something" in title:
             raise forms.ValidationError("Wrong question!")
+        return title
