@@ -2,7 +2,6 @@
 
 {% block testing_list %}
     {% for instance in object_list %}
-        <p>{{instance.title}}</p><br>
-        <p>{{instance.info}}</p>
+        <p>{{instance.id}} - <a href='/testing/{{instance.id}}/'>{{instance.title}}</a></p>
     {% endfor %}
 {% endblock %}
